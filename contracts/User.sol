@@ -115,7 +115,7 @@ contract User {
 
   // get by username
   function getUserByUsername(bytes16 username) public view returns(uint index, address userAddress, bytes ipfsHash) {
-    require(index < addresses.length);
+    require(usernameToIndex[username] < addresses.length);
 
     return(usernameToIndex[username], addresses[usernameToIndex[username]], ipfsHashes[usernameToIndex[username]]);
   }
